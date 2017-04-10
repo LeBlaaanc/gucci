@@ -4,21 +4,21 @@ module.exports = async function (context) {
     const { print, prompt, system } = context
     const { colors, warning, info, error, success } = print
 
-    info(colors.magenta('🤖  Starting API'))
+    info(colors.green('🤖  Starting API'))
     const apiProcess = spawn('npm', ['start'], {
       cwd: './api'
     })
-    apiProcess.stdout.on('data', data => print.info(colors.magenta(`${data}`)))
-    apiProcess.stderr.on('data', data => print.error(colors.magenta(`${data}`)))
+    apiProcess.stdout.on('data', data => process.stdout.write(colors.green(`${data}`)))
+    apiProcess.stderr.on('data', data => process.stderr.write(colors.green(`${data}`)))
 
-    info(colors.cyan('📱  Starting React Native'))
+    info(colors.green('📱  Starting React Native'))
     const packagerProcess = spawn('react-native', ['start'], {
       cwd: './app'
     })
-    packagerProcess.stdout.on('data', data => print.info(colors.cyan(`${data}`)))
-    packagerProcess.stderr.on('data', data => print.error(colors.cyan(`${data}`)))
+    packagerProcess.stdout.on('data', data => process.stdout.write(colors.green(`${data}`)))
+    packagerProcess.stderr.on('data', data => process.stderr.write(colors.green(`${data}`)))
 
-    info(colors.cyan('📱  Starting Simulator'))
+    info(colors.green('📱  Starting Simulator'))
     const simulatorProcess = await system.run('cd ./app && react-native run-ios');
 }
 
