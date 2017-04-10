@@ -1,0 +1,4 @@
+lerna(info)    Lerna v2.0.0-rc.1
+lerna(verbose) GitUtilities.isInitialized    (".")
+lerna(verbose) GitUtilities.isInitialized    (".") => true
+lerna(warn)    `lerna.json` does not exist, have you run `lerna init`?
