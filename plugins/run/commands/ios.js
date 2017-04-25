@@ -19,6 +19,10 @@ module.exports = async function (context) {
     packagerProcess.stderr.on('data', data => process.stderr.write(colors.green(`${data}`)))
 
     info(colors.green('📱  Starting Simulator'))
-    const simulatorProcess = await system.run('cd ./app && react-native run-ios');
+    const simulatorProcess = spawn('react-native', ['run-ios'], {
+      cwd: './app'
+    })
+    simulatorProcess.stdout.on('data', data => process.stdout.write(colors.green(`${data}`)))
+    simulatorProcess.stderr.on('data', data => process.stderr.write(colors.green(`${data}`)))    
 }
 
