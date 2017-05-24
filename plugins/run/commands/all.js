@@ -24,5 +24,12 @@ module.exports = async function (context) {
     })
     simulatorProcess.stdout.on('data', data => process.stdout.write(colors.green(`${data}`)))
     simulatorProcess.stderr.on('data', data => process.stderr.write(colors.green(`${data}`)))    
+
+    info(colors.green('💻  Starting Web Application'))
+    const webProcess = spawn('npm', ['start'], {
+      cwd: './web'
+    })
+    webProcess.stdout.on('data', data => process.stdout.write(colors.green(`${data}`)))
+    webProcess.stderr.on('data', data => process.stderr.write(colors.green(`${data}`)))    
 }
 

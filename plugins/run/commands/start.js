@@ -11,18 +11,19 @@ module.exports = async function (context) {
     apiProcess.stdout.on('data', data => process.stdout.write(colors.green(`${data}`)))
     apiProcess.stderr.on('data', data => process.stderr.write(colors.green(`${data}`)))
 
-    info(colors.green('⚛️  Starting React Native'))
+    info(colors.green('📱  Starting React Native'))
     const packagerProcess = spawn('react-native', ['start'], {
       cwd: './app'
     })
     packagerProcess.stdout.on('data', data => process.stdout.write(colors.green(`${data}`)))
     packagerProcess.stderr.on('data', data => process.stderr.write(colors.green(`${data}`)))
 
-    info(colors.green('📱  Starting Simulator'))
-    const simulatorProcess = spawn('react-native', ['run-ios'], {
-      cwd: './app'
+    info(colors.green('💻  Starting Web Application'))
+    const simulatorProcess = spawn('npm', ['start'], {
+      cwd: './web'
     })
     simulatorProcess.stdout.on('data', data => process.stdout.write(colors.green(`${data}`)))
     simulatorProcess.stderr.on('data', data => process.stderr.write(colors.green(`${data}`)))    
+
 }
 
