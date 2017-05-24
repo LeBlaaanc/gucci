@@ -1,6 +1,6 @@
 {
   "name": "gucci",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,8 +9,8 @@
     "type": "git",
     "url": "git+https://github.com/LeBlaaanc/gucci.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Chris LeBlanc <chris@leblaaanc.com> (http://github.com/LeBlaaanc)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/LeBlaaanc/gucci/issues"
   },
