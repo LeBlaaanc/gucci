@@ -10,7 +10,7 @@ Runs API, React Native Packager, and Web Application.
 
 ### gucci run ios
 
-Runs API, React Native React Native, and starts IOS simulator.
+Runs API, React Native Packager, and starts IOS simulator.
 
 ### gucci run start
 
